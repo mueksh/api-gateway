@@ -11,7 +11,6 @@ spring:
       server:
         webflux:
           routes:
-
             - id: user-service
               uri: lb://USER-SERVICE
               predicates:
@@ -21,6 +20,11 @@ spring:
               uri: lb://PRODUCT-SERVICE
               predicates:
                 - Path=/products/**
+
+            - id: inventory-service
+              uri: lb://INVENTORY-SERVICE
+              predicates:
+                - Path=/inventories/**
 
 # Eureka server configuration
 eureka:
