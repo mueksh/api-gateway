@@ -31,6 +31,17 @@ spring:
               predicates:
                 - Path=/orders/**
 
+            - id: payment-service
+              uri: lb://PAYMENT-SERVICE
+              predicates:
+                - Path=/payment/**
+
+            - id : shipping-service
+              uri: lb://SHIPPING-SERVICE
+              predicates:
+                - Path=/shipping/**
+
+
 # Eureka server configuration
 eureka:
   client:
