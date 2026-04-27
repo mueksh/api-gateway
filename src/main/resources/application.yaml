@@ -41,6 +41,11 @@ spring:
               predicates:
                 - Path=/shipping/**
 
+            - id: review-service
+              uri: lb://REVIEW-SERVICE
+              predicates:
+                - Path=/reviews/**
+
 
 # Eureka server configuration
 eureka:
